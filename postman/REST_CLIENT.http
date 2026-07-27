@@ -1,0 +1,39 @@
+### 1. Health Check
+GET http://localhost:5000/health
+
+### 2. Get All Todos (with pagination & filter)
+GET http://localhost:5000/api/todos?page=1&limit=10
+
+### 3. Get Filtered Todos (completed / pending)
+GET http://localhost:5000/api/todos?filter=pending
+
+### 4. Create Todo
+# @name createTodo
+POST http://localhost:5000/api/todos
+Content-Type: application/json
+
+{
+  "title": "Complete Ziptrrip Assessment",
+  "description": "Build full-stack todo app with MPA React + Node TypeScript + SQLite",
+  "priority": "high",
+  "due_date": "2026-07-28"
+}
+
+### 5. Get Todo by ID
+GET http://localhost:5000/api/todos/{{todoId}}
+
+### 6. Update Todo
+PUT http://localhost:5000/api/todos/{{todoId}}
+Content-Type: application/json
+
+{
+  "title": "Complete Ziptrrip Assessment (Updated)",
+  "completed": true,
+  "priority": "high"
+}
+
+### 7. Toggle Todo Completed Status
+PATCH http://localhost:5000/api/todos/{{todoId}}/toggle
+
+### 8. Delete Todo
+DELETE http://localhost:5000/api/todos/{{todoId}}
